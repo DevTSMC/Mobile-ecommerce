@@ -8,7 +8,9 @@ import {
   Platform,
   Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView,
+  ImageBackground
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 const {width: WIDTH} = Dimensions.get('window');
@@ -186,7 +188,141 @@ export default class TelaCadastroUser extends Component {
 
         </View>
         <View style={styles.bodyContainer}>
-          <Text>tela Home</Text>
+        <ScrollView >
+            <View style={{height:200}}>
+              <ScrollView pagingEnabled={true} horizontal={true}>
+                <ImageBackground style={styles.bannerDestaque}
+                  source={require("../assets/celular.jpeg")}>
+                  <Text style={{fontWeight:'bold', fontSize: 30}}>Banner em destaque 1</Text>
+                </ImageBackground>
+
+                <ImageBackground style={styles.bannerDestaque}
+                source={require("../assets/mouse.jpeg")}>
+                  <Text style={{fontWeight:'bold', fontSize: 30}}>Banner em destaque 2</Text>
+                </ImageBackground>
+
+                <ImageBackground style={styles.bannerDestaque}
+                source={require("../assets/notebook.jpeg")} >
+                  <Text style={{fontWeight:'bold', fontSize: 30}}>Banner em destaque 3</Text>
+                </ImageBackground>
+
+              </ScrollView>
+            </View>
+          
+            <View style={{margin:5, marginTop:10}}>
+              <Text style={styles.txtTopicos}>Product Category</Text>
+
+              <View style={{flexDirection:'row', height:100}}>
+
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Women's</Text>
+                </View>
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Lifestyle</Text>
+                </View>
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Foods</Text>
+                </View>
+
+              </View>
+
+              <View style={{flexDirection:'row', height:100}}>
+
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Sports</Text>
+                </View>
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Men's</Text>
+                </View>
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Travel</Text>
+                </View>
+
+              </View>
+
+            </View>
+
+            <View style={{margin:5, marginTop:10}}>
+              <Text style={styles.txtTopicos}>Flash Sale</Text>
+
+              <View style={{height:150}}>
+                <ScrollView horizontal={true}>
+                  <View style={{flex:1, width:100, borderRadius:5, margin:5, backgroundColor:'red'}}>
+                    <Text>Sports</Text>
+                  </View>
+                  <View style={{flex:1, width:100, borderRadius:5, margin:5, backgroundColor:'green'}}>
+                    <Text>Men's</Text>
+                  </View>
+                  <View style={{flex:1, width:100, borderRadius:5, margin:5, backgroundColor:'purple'}}>
+                    <Text>Travel</Text>
+                  </View>
+                  <View style={{flex:1, width:100, borderRadius:5, margin:5, backgroundColor:'yellow'}}>
+                    <Text>Sports</Text>
+                  </View>
+                  <View style={{flex:1, width:100, borderRadius:5, margin:5, backgroundColor:'orange'}}>
+                    <Text>Men's</Text>
+                  </View>
+                  <View style={{flex:1, width:100, borderRadius:5, margin:5, backgroundColor:'pink'}}>
+                    <Text>Travel</Text>
+                  </View>
+                </ScrollView>
+              </View>
+            </View>
+
+            <View style={{margin:5}}>
+              <Text style={styles.txtTopicos}>Top Products</Text>
+
+              <View style={{flexDirection:'row', height:300}}>
+
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Sports</Text>
+                </View>
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Men's</Text>
+                </View>
+
+              </View>
+
+              <View style={{flexDirection:'row', height:300}}>
+
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Sports</Text>
+                </View>
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Men's</Text>
+                </View>
+
+              </View>
+
+              <View style={{flexDirection:'row', height:300}}>
+
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Sports</Text>
+                </View>
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Men's</Text>
+                </View>
+
+              </View>
+
+              <View style={{flexDirection:'row', height:300}}>
+
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Sports</Text>
+                </View>
+                <View style={{flex:1, borderRadius:5, margin:5, backgroundColor:'#fff'}}>
+                  <Text>Men's</Text>
+                </View>
+
+              </View>
+
+              <View style={{height:300, backgroundColor:'rgba(19, 151, 213, 0.7)', borderRadius:5, margin:5, marginTop:15}}>
+                <Text style={{fontSize:20, alignSelf:'center', fontWeight:'bold'}}>Desconto de 20%</Text>
+              </View>
+
+            </View>
+          </ScrollView>
+          
         </View>
       </SafeAreaView>
     );
@@ -249,4 +385,16 @@ const styles = StyleSheet.create({
     zIndex:2,
     opacity:1
   },
+  bannerDestaque:{
+    height:200,
+    width:WIDTH-15,
+    marginLeft:5,
+    backgroundColor:"#ffffff",
+    borderRadius:20
+  },
+  txtTopicos:{
+    fontSize:20,
+    color:'blue',
+    fontWeight:'bold'
+  }
 });
